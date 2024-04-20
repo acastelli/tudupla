@@ -1,4 +1,4 @@
-import { AboutUs } from 'features/AboutUs';
+import { AboutUs } from "../features/AboutUs";
 
 const AboutUsPage = () => {
   return <AboutUs />;

@@ -1,20 +1,20 @@
-import { ChangeEvent, useState } from 'react';
-import theme from 'muiTheme';
-import LoadingButton from '@mui/lab/LoadingButton';
-import { Grid, Paper, TextField, Typography } from '@mui/material';
-import { useResolution } from 'features/common/hooks/useResolution';
-import { Header } from 'layouts';
-import emailjs from '@emailjs/browser';
-import { ContactUsImg, ContainerBox, GridRight } from './Contact.styles';
-import { FormState } from './types';
-import ContactImg from '../../assets/contactUsImg.jpg';
+import { ChangeEvent, useState } from "react";
+import theme from "muiTheme";
+import LoadingButton from "@mui/lab/LoadingButton";
+import { Grid, Paper, TextField, Typography } from "@mui/material";
+import { useResolution } from "features/common/hooks/useResolution";
+import { Header } from "layouts";
+import emailjs from "@emailjs/browser";
+import { ContactUsImg, ContainerBox, GridRight } from "./Contact.styles";
+import { FormState } from "./types";
+import ContactImg from "../../assets/contactUsImg.jpg";
 
 const Contact = () => {
   const [formState, setFormState] = useState<FormState>({
-    firstName: '',
-    secondName: '',
-    email: '',
-    message: '',
+    firstName: "",
+    secondName: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { isXs } = useResolution();
@@ -29,13 +29,14 @@ const Contact = () => {
   };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("formState", formState);
     e.persist();
     e.preventDefault();
     setIsSubmitting(true);
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_ID || '',
-        process.env.REACT_APP_TEMPLATE_ID || '',
+        process.env.REACT_APP_SERVICE_ID || "",
+        process.env.REACT_APP_TEMPLATE_ID || "",
         e.target as HTMLFormElement,
         process.env.REACT_APP_PUBLIC_KEY
       )
@@ -60,11 +61,11 @@ const Contact = () => {
         </Grid>
         <GridRight item xs={12} sm={6}>
           <Typography
-            variant={isXs ? 'h4' : 'h3'}
+            variant={isXs ? "h4" : "h3"}
             fontWeight="bold"
             color={theme.palette.primary.main}
             textAlign="center"
-            pb={{ xs: '1rem', md: '0' }}
+            pb={{ xs: "1rem", md: "0" }}
           >
             Contacto
           </Typography>

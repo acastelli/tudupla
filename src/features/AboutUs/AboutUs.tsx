@@ -1,10 +1,11 @@
-import { Typography, Box, Grid } from '@mui/material';
-import TeamCard from 'features/common/components/TeamCard/TeamCard';
-import { Header } from 'layouts';
-import theme from 'muiTheme';
-import Work from '../../assets/work.png';
-import { TeamImg, TeamGrid, ContainerBox } from './AboutUs.styles';
-import { teamMembers } from './constant';
+import { Typography, Box, Grid } from "@mui/material";
+
+import Work from "../../assets/work.png";
+import { TeamImg, TeamGrid, ContainerBox } from "./AboutUs.styles";
+import { teamMembers } from "./constant";
+import { Header } from "../../layouts";
+import theme from "../../muiTheme";
+import TeamCard from "../common/components/TeamCard/TeamCard";
 
 const AboutUs = () => {
   return (

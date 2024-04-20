@@ -1,4 +1,4 @@
-import { Contact } from 'features/Contact';
+import { Contact } from "../features/Contact";
 
 const ContactPage = () => {
   return <Contact />;
